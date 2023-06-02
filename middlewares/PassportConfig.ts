@@ -2,7 +2,7 @@ import { User } from "./Orm"
 
 const GoogleStrategy: any = require("passport-google-oauth2").Strategy
 
-module.exports = (passport: any): void => {
+const PassportConfig = (passport: any): void => {
 	passport.use(new GoogleStrategy({
 		clientID: "60848798350-o0lknfj0410at5u8j3jejsm117ptk6ej.apps.googleusercontent.com",
 		clientSecret: "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",
@@ -32,4 +32,6 @@ module.exports = (passport: any): void => {
 	} 
 	))
 }
+
+export default PassportConfig
 
