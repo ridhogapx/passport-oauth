@@ -10,7 +10,7 @@ const PassportConfig = (passport: any): void => {
 		passReqToCallback: true
 	}, async(request: any, accessToken: any, refreshToken: any, profile: any, done: any): Promise<any> => {
 		try {
-			let isExist = await User.findOne({
+			let isExist = await User.findAll({
 				where: {
 					email: profile.email
 				}
