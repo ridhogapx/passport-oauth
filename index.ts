@@ -8,8 +8,6 @@ const passport: any = require("passport")
 const app: Express = express()
 const port: number = 3001
 
-PassportConfig(passport)
-
 Orm.authenticate().then((result: any) => {
 	console.log("Success connected to database")
 })
@@ -22,6 +20,8 @@ app.get("/", (req: Request, res: Response) => {
         message: 'Hello world!'
     })
 })
+
+PassportConfig(passport)
 
 app.get("/auth/google", passport.authenticate("google", { scope: ["email", "profile"] }))
 app.get("/auth/google/callback", passport.authenticate("google", { session: false }), 

@@ -10,8 +10,8 @@ export const Orm: any = new Sequelize(
 		}
 	)
 
-export const User: any = Orm.define('user', {
-	emai: {
+export const User: any = Orm.define('users', {
+	email: {
 		type: DataTypes.STRING,
 		allowNull: false
 	},
