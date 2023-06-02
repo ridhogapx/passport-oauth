@@ -1,7 +1,7 @@
 import express, { Express, Request, Response } from "express"
 
 const bodyParser: any = require('body-parser')
-const passport = require('passport')
+const passport: any = require('passport')
 
 const app: Express = express()
 const port: number = 3000
