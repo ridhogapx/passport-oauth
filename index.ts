@@ -11,8 +11,10 @@ const port: number = 3001
 Orm.authenticate()
 Orm.sync()
 
-app.get('/', (req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response) => {
     res.json({
         message: 'Hello world!'
     })
 })
+
+app.get("/auth/google", passport.authenticate("google", { scope: ["email", "profile"] }))
