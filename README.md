@@ -31,7 +31,13 @@ npx tsc
 </ul>
 <img src="./docs_image/1.PNG">
 
-<p>Setelah membuat API Credentials. Buka file "PassportConfig.ts" pada folder "middlewares". Isikan credentials pada baris kode yang sudah saya komentari.</p>
+<p>Setelah membuat API Credentials. Buka file "PassportConfig.ts" pada folder "middlewares". Isikan credentials pada baris kode yang sudah saya komentari. Selanjutnya, lakukan compile ulang file Typescript dengan perintah berikut</p>
+
+``` bash
+npx tsc
+```
+
+<p>Terakhir, jalan perintah berikut untuk menjalankan server: </p>
 
 ``` bash
 npm run start-server
