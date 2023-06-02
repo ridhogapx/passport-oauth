@@ -8,8 +8,27 @@ const PassportConfig = (passport: any): void => {
 		clientSecret: "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",
 		callbackURL: "http://localhost:3001/auth/google/callback",
 		passReqToCallback: true
-	}, (request: any, accessToken: any, refreshToken: any, profile: any, done: any): string => {
-		return done(null, "Yeayy")
+	}, async(request: any, accessToken: any, refreshToken: any, profile: any, done: any): Promise<any> => {
+		try {
+			let isExist = await User.findAll({
+				where: {
+					email: profile.emails[0].value
+				}
+			})
+
+			if(isExist.length) {
+				return done(null, isExist)
+			} else {
+				const newUser = await User.create({
+						email: profile.emails[0].value,
+						name: profile.displayName
+				})
+				return done(null, newUser)
+			}
+
+		} catch(err) {
+			return err
+		}
 	} 
 	))
 }
