@@ -17,6 +17,26 @@ const Orm: any = new Sequelize(
 		}
 	)
 
+const User: any = Orm.define('user', {
+	emai: {
+		type: DataTypes.STRING,
+		allowNull: false
+	},
+	name: {
+		type: DataTypes.STRING,
+		allowNukll: false
+	}
+})
+
+Orm.authenticate().then((result: any) => {
+	console.log("Connection to database is successfully")
+})
+
+
+Orm.sync().then((result:any) => {
+	console.log("Database is synced")
+})
+
 passport.use(new GoogleStrategy({
 	clientID: '60848798350-o0lknfj0410at5u8j3jejsm117ptk6ej.apps.googleusercontent.com',
 	clientSecret: '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',
