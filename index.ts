@@ -25,3 +25,7 @@ app.get("/", (req: Request, res: Response) => {
 })
 
 app.get("/auth/google", passport.authenticate("google", { scope: ["email", "profile"] }))
+
+app.listen(port, (): void => {
+	console.log()
+})
