@@ -4,7 +4,13 @@ const GoogleStrategy: any = require("passport-google-oauth2").Strategy
 
 const PassportConfig = (passport: any): void => {
 	passport.use(new GoogleStrategy({
-		/* Masukkan credentials API kamu di sini...*/
+		/* 
+		Masukkan credentials API kamu di sini.
+		Sangat direkomendasikan untuk menyimpan detail credentials
+		di file .env.
+		Dengan alasan keamanan, credentials kamu akan lebih aman jika disimpan di file
+		.env dengan bantuan library dotenv
+		*/
 		clientID: "YOUR_CLIENT_ID",
 		clientSecret: "YOUR_CLIENT_SECRET",
 		callbackURL: "http://localhost:3001/auth/google/callback",
