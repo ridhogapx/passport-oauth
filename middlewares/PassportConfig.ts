@@ -17,10 +17,17 @@ const PassportConfig = (passport: any): void => {
 			})
 
 			if(isExist.length) {
-				return done()
+				return isExist
+			} else {
+				const newUser = await User.create({
+						email: profile.emails[0].value,
+						name: profile.displayName
+				})
+				return newUser
 			}
+
 		} catch(err) {
-			console.log(err)
+			return err
 		}
 	} 
 	))
