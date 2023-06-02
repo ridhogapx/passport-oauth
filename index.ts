@@ -29,9 +29,10 @@ app.get("/auth/google/callback", passport.authenticate("google", { session: fals
 		res.redirect("/profile")
 	})
 
+// If user is successfully auth, it will redirect to profile page
 app.get("/profile", (req: Request, res: Response) => {
 	res.json({
-		message: "Hello user"
+		message: "Hello user!"
 	})
 })
 
