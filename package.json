@@ -1,7 +1,6 @@
 {
   "name": "passport-oauth",
   "version": "1.0.0",
-  "type": "module",
   "description": "Sample for using passport with oauth google",
   "main": "index.js",
   "scripts": {

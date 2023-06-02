@@ -2,14 +2,21 @@ import express, { Express, Request, Response } from "express"
 import bodyParser from "body-parser"
 import { Orm, User } from "./middlewares/Orm"
 
+
 const passport: any = require("passport")
-const GoogleStrategy: any = require("passport-google-oauth2").Strategy()
+require('./middlewares/PassportConfig')(passport)
+
 
 const app: Express = express()
 const port: number = 3001
 
-Orm.authenticate()
-Orm.sync()
+
+Orm.authenticate().then((result: any) => {
+	console.log("Success connected to database")
+})
+Orm.sync().then((result: any) => {
+	console.log("Sync database is complete")
+})
 
 app.get("/", (req: Request, res: Response) => {
     res.json({
