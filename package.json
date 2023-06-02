@@ -24,6 +24,7 @@
     "mysql2": "^3.3.3",
     "nodemon": "^2.0.22",
     "passport": "^0.6.0",
+    "passport-google-oauth2": "^0.2.0",
     "passport-google-oidc": "^0.1.0",
     "sequelize": "^6.32.0",
     "typescript": "^5.0.4"
